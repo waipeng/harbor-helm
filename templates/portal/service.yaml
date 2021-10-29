@@ -7,6 +7,8 @@ metadata:
 spec:
 {{- if  (eq .Values.expose.ingress.controller "gce") }}
   type: NodePort
+{{- else }}
+  type: {{ .Values.expose.ingress.portal.type }}
 {{- end }}
   ports:
     - port: {{ template "harbor.portal.servicePort" . }}

@@ -55,6 +55,10 @@ expose:
     harbor:
       # harbor ingress-specific annotations
       annotations: {}
+    core:
+      type: ClusterIP
+    portal:
+      type: ClusterIP
   clusterIP:
     # The name of ClusterIP service
     name: harbor
